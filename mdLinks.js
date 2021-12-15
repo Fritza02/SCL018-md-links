@@ -43,7 +43,7 @@ const mdLinks = (fullPath, options = { validate: false, stats: false}) => {
     }
 });
 };
-    var myfunc = mdLinks();
+    /* var myfunc = mdLinks();
     myfunc.then(function () {
         console.log("Promise Resolved");
     }).catch(function () {
@@ -52,5 +52,5 @@ const mdLinks = (fullPath, options = { validate: false, stats: false}) => {
 
     mdLinks('./carpetaPrueba/archivoPrueba.md',{ validate: false, stats:false}).then((results)=> {
         console.log(results);
-        })
+        }) */
         
