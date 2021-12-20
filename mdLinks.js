@@ -1,30 +1,5 @@
 import { funcDirOrFile, validateArray, statsArray, validateStats } from './functionsMd.js';
 
-/* const mdLinks = (fullPath, options = { validate: false, stats: false}) => {
-    return new Promise((resolve, reject) => {
-    let totalMdLinks = [];
-    funcDirOrFile(fullPath, totalMdLinks);
-    if (totalMdLinks.length > 0) {
-        if (!options.validate && options.stats) {
-            validateArray(totalMdLinks)
-            .then((results) => {
-            resolve(results);
-        });
-        } else if (options.validate && !options.stats) {
-            // resolve(statsArray(totalMdLinks));
-            statsArray(totalMdLinks)
-            .then((result) => {
-                resolve(result);
-            })
-        } else if (!options.validate && !options.stats) {
-            resolve (validateStats(totalMdLinks));
-        }
-    }
-    else {
-        reject(new Error('couldn\'t find any link'));
-    }
-});
-}; */
 const mdLinks = (fullPath, options = { validate: false, stats: false}) => {
     return new Promise((resolve, reject) => {
     let totalMdLinks = [];
@@ -35,22 +10,16 @@ const mdLinks = (fullPath, options = { validate: false, stats: false}) => {
         } else if (options.validate && !options.stats) {
             resolve(statsArray(totalMdLinks));
         } else if (!options.validate && !options.stats) {
-            resolve (validateStats(totalMdLinks));
+            validateStats(totalMdLinks)
+            .then(r=>console.log(r))
         }
     }
     else {
         reject(new Error('couldn\'t find any link'));
-    }
-});
+    } 
+}).catch((err) => { console.log('This is why totalMdLinks fails: ' + err)});
 };
-    /* var myfunc = mdLinks();
-    myfunc.then(function () {
-        console.log("Promise Resolved");
-    }).catch(function () {
-        console.log("Promise Rejected");
-    });
-
     mdLinks('./carpetaPrueba/archivoPrueba.md',{ validate: false, stats:false}).then((results)=> {
         console.log(results);
-        }) */
+        }) 
         

@@ -3,7 +3,7 @@ import path from 'path';
 import fetch from 'node-fetch';
 
 // función si es un directorio 
-const funcIsDirectory = (dirRoute) => {
+export const funcIsDirectory = (dirRoute) => {
     try {
         const stats = fs.statSync(dirRoute); // método que devuelve información sobre la ruta de archivo dada
         return stats.isDirectory(); // retorna true o false, dependiendo si es o no un directorio 
@@ -77,23 +77,25 @@ export const validateArray = (arrLinks) => {
     const promises = arrLinks.map((object) => // crea un nuevo array con los resultados de la llamada a la función indicada aplicados a cada uno de sus elementos.
     fetch(object.href) // método que regresa una promesa
         .then((res) => {
+            // console.log('este es RES'+ res);
             return {
-            href: object.href,
-            text: object.text,
-            file: object.file,
-            status: res.status,
-            statusText: res.statusText,
-            };
-        })
-        .catch((err) =>
-        ({
-            href: object.href,
-            text: object.text,
-            file: object.file,
-            status: 404,
-            statusText: 'FAIL',
-        }),
-        ));
+                href: object.href,
+                text: object.text,
+                file: object.file,
+                status: res.status,
+                statusText: res.statusText,
+                };
+            }) 
+        .catch((err) => {
+            // console.log(err);
+            return  {
+                href: object.href,
+                text: object.text,
+                file: object.file,
+                status: 404,
+                statusText: 'Fail',
+            }
+        }));
     return Promise.all(promises);
 }; 
 
@@ -111,21 +113,26 @@ export const statsArray = (validateOpt) => {
 };
 
 
-// función validat y status 
+// función validar y status 
 export const validateStats = (arrayLinks) => {
-    let objeValStat = {};
-    objeValStat.Total = arrayLinks.length;
-    objeValStat.Unique = 0;
-    objeValStat.Broken = 0;
-    const uniqueLinks = new Set();
-    arrayLinks.forEach(obj => {
-        uniqueLinks.add(obj.href);
-        if (object.statusText === 'FAIL') {
-            statsObject.Broken += 1;
-        }
-    });
-    objeValStat.Unique = uniqueLinks.size;
-    return objeValStat;
+    return Promise.resolve(
+validateArray(arrayLinks)
+    .then(validatedArr=>{
+        let objeValStat = {};
+        objeValStat.Total = validatedArr.length;
+        objeValStat.Unique = 0;
+        objeValStat.Broken = 0;
+        const uniqueLinks = new Set();
+        validatedArr.forEach(obj => {
+            uniqueLinks.add(obj.href);
+            if (obj.status === 404) {
+                objeValStat.Broken += 1;
+            }
+        });
+        objeValStat.Unique = uniqueLinks.size;
+        return objeValStat;
+    })
+    .catch(err=>console.log('Error de validate stats' + err)))
 }
 
 
