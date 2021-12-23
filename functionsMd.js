@@ -13,7 +13,7 @@ export const funcIsDirectory = (dirRoute) => {
 };
 
 // función si es un documento 
-const funcIsMdFile = (filesRoute) => {
+export const funcIsMdFile = (filesRoute) => {
     const extName = path.extname(filesRoute); // retorna todo lo que está después del . 
     if (extName === '.md') {
         return true; // retorna true 

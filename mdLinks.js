@@ -1,15 +1,15 @@
 import { funcDirOrFile, validateArray, statsArray, validateStats } from './functionsMd.js';
 
-const mdLinks = (fullPath, options = { validate: false, stats: false}) => {
+export const mdLinks = (fullPath, options) => {
     return new Promise((resolve, reject) => {
     let totalMdLinks = [];
     funcDirOrFile(fullPath, totalMdLinks);
     if (totalMdLinks.length > 0) {
-        if (!options.validate && options.stats) {
+        if (options.validate === true && options.stats === false) {
             resolve(validateArray(totalMdLinks))
-        } else if (options.validate && !options.stats) {
+        } else if (options.validate === false && options.stats === true) {
             resolve(statsArray(totalMdLinks));
-        } else if (!options.validate && !options.stats) {
+        } else if (options.validate === true && options.stats === true) {
             validateStats(totalMdLinks)
             .then(r=>console.log(r))
         }
@@ -19,7 +19,7 @@ const mdLinks = (fullPath, options = { validate: false, stats: false}) => {
     } 
 }).catch((err) => { console.log('This is why totalMdLinks fails: ' + err)});
 };
-    mdLinks('./carpetaPrueba/archivoPrueba.md',{ validate: false, stats:false}).then((results)=> {
+    /* mdLinks(files,options).then((results)=> {
         console.log(results);
-        }) 
+        }) */
         
