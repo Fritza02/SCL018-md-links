@@ -19,8 +19,6 @@
 
 fritza-md-links es una librería que extrae los links que se encuentran dentro de archivos con formato markdown y procede a validar cada uno de ellos.
 
-![md-links](https://user-images.githubusercontent.com/110297/42118443-b7a5f1f0-7bc8-11e8-96ad-9cc5593715a6.jpg)
-
 ## 2. Instalación
 
 Para comenzar la instalación de esta libreria necesitas primero instalar Node.js y luego ejecutar el comando:
@@ -37,6 +35,25 @@ Una vez que ya se instaló la libería se debe porceder a ejecutar con el siguie
 ```
 ### Opciones de argumentos
 
+  >--validate: Este argumento devuelve href, texto, la ruta del archivo, número de línea, status y statusText.
+
+  >--stats: Este argumento devuelve el total de links encontrados y cuántos de ellos son únicos.
+
+  >--validate --stats: Este argumento devuelve el total de links encontrados, cuántos de ellos son únicos y el número de links rotos.
+
+## 4. API
+
 ```yaml
-  --validate: Este argumento devuelve href, texto, la ruta del archivo, número de línea, status y statusText
+  mdLinks(dirPath, options)
 ``` 
+>dirPath: una cadena que representa una ruta relativa o absoluta.
+
+>options: un objeto para argumentos opcionales para la api
+
+* validate: un booleano para validar enlaces.
+
+* stats: un booleano para solicitar estadísticas de enlaces.
+
+* validate y stats: un booleano que solicita la validación y estadística de los enlaces. 
+
+
