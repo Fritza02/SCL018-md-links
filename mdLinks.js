@@ -19,7 +19,4 @@ export const mdLinks = (fullPath, options) => {
     } 
 }).catch((err) => { console.log('This is why totalMdLinks fails: ' + err)});
 };
-    /* mdLinks(files,options).then((results)=> {
-        console.log(results);
-        }) */
         

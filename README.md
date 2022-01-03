@@ -27,7 +27,7 @@ Para comenzar la instalación de esta libreria necesitas primero instalar Node.j
 Una vez que ya se instaló la libería se debe porceder a ejecutar con el siguiente comando: 
 
 ```yaml
-  md-links-fritza ./path/to/file.md
+  md-links-fritza ./path/to/file.md (argumento)
 ```
 ### Opciones de argumentos
 
@@ -55,5 +55,7 @@ Una vez que ya se instaló la libería se debe porceder a ejecutar con el siguie
 ![foto1](https://github.com/Fritza02/SCL018-md-links/blob/main/imageReadme/diagrama.png?raw=true)
 
 ## 6. Librería ejecutada en terminal
+
+Ejemplo real de librería utilizada en un archivo de prueba con todas sus opciones --validate, --stats y --validate --stats
 
 ![foto2](https://github.com/Fritza02/SCL018-md-links/blob/main/imageReadme/mdlinks.png?raw=true)

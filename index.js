@@ -87,7 +87,6 @@ export const validateArray = (arrLinks) => {
                 };
             }) 
         .catch((err) => {
-            // console.log(err);
             return  {
                 href: object.href,
                 text: object.text,

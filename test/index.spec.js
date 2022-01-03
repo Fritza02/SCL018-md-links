@@ -6,7 +6,7 @@ describe("linksMd", () => {
     expect(typeof linksMd).toBe("function");
     });
     it("should return an array", () => {
-    const path = "readme.md";
+    const path = "archivoPrueba.md";
     const result = linksMd(path);
     expect(result).toBeInstanceOf(Array);
     });
@@ -17,7 +17,7 @@ describe("validateArray", () => {
     expect(typeof validateArray).toBe("function");
     });
     it("should return a promise", () => {
-    const path = "readme.md";
+    const path = "archivoPrueba.md";
     const result = mdLinks(path);
     expect(result).toBeInstanceOf(Promise);
     });
@@ -28,7 +28,7 @@ describe('funcIsMdFile', () => {
     });
 
     it('should return true', () => {
-    const result = funcIsMdFile('readme.md');
+    const result = funcIsMdFile('archivoPrueba.md');
     expect(result).toBeTruthy();
     });
 });
