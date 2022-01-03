@@ -25,8 +25,18 @@ fritza-md-links es una librería que extrae los links que se encuentran dentro d
 
 Para comenzar la instalación de esta libreria necesitas primero instalar Node.js y luego ejecutar el comando:
 ```yaml
-[npm i fritza-md-links]
+  npm i fritza-md-links
 ```
 
-## 3. Objetivos de aprendizaje
+## 3. Guía de uso
 
+Una vez que ya se instaló la libería se debe porceder a ejecutar con el siguiente comando: 
+
+```yaml
+  fritza-md-links ./path/to/file.md
+```
+### Opciones de argumentos
+
+```yaml
+  --validate: Este argumento devuelve href, texto, la ruta del archivo, número de línea, status y statusText
+``` 
