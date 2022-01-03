@@ -56,4 +56,8 @@ Una vez que ya se instaló la libería se debe porceder a ejecutar con el siguie
 
 ## 5. Diagrama de flujo
 
-![foto1](https://github.com/Fritza02/SCL018-social-network/blob/fritza1/src/imagesReadme/mobile.png?raw=true)
+![foto1](https://github.com/Fritza02/SCL018-md-links/blob/main/imageReadme/diagrama.png?raw=true)
+
+## 6. Librería ejecutada en terminal
+
+![foto2](https://github.com/Fritza02/SCL018-md-links/blob/main/imageReadme/mdlinks.png?raw=true)
