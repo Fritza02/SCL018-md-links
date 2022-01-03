@@ -44,11 +44,11 @@ Una vez que ya se instaló la libería se debe porceder a ejecutar con el siguie
 ``` 
 * *dirPath*: una cadena que representa una ruta relativa o absoluta.
 
-* *options**: un objeto para argumentos opcionales para la api
+* *options*: un objeto para argumentos opcionales para la api
 
-  * * validate: un booleano para validar enlaces.
-  * * stats: un booleano para solicitar estadísticas de enlaces.
-  * * validate y stats: un booleano que solicita la validación y estadística de los enlaces. 
+  * validate: un booleano para validar enlaces.
+  * stats: un booleano para solicitar estadísticas de enlaces.
+  * validate y stats: un booleano que solicita la validación y estadística de los enlaces. 
 
 ## 5. Diagrama de flujo
 
