@@ -1,4 +1,4 @@
-import { funcDirOrFile, validateArray, statsArray, validateStats } from './functionsMd.js';
+import { funcDirOrFile, validateArray, statsArray, validateStats } from './index.js';
 
 export const mdLinks = (fullPath, options) => {
     return new Promise((resolve, reject) => {
