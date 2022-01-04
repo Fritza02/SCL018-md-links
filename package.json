@@ -1,5 +1,5 @@
 {
-  "name": "md-links-fritza",
+  "name": "md-links-fritzavz",
   "version": "0.1.0",
   "type": "module",
   "dependencies": {
@@ -7,8 +7,8 @@
     "valid-url": "^1.0.9"
   },
   "bin": {
-    "md-links": "./cli.js"
-  }, 
+    "md-links-fritza": "./cli.js"
+  },
   "devDependencies": {
     "jest": "^27.4.3"
   },

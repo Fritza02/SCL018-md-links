@@ -77,7 +77,6 @@ export const validateArray = (arrLinks) => {
     const promises = arrLinks.map((object) => // crea un nuevo array con los resultados de la llamada a la función indicada aplicados a cada uno de sus elementos.
     fetch(object.href) // método que regresa una promesa
         .then((res) => {
-            // console.log('este es RES'+ res);
             return {
                 href: object.href,
                 text: object.text,

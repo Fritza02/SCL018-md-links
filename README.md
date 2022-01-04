@@ -19,7 +19,7 @@ md-links-fritza es una librería que extrae los links que se encuentran dentro d
 
 Para comenzar la instalación de esta libreria necesitas primero instalar Node.js y luego ejecutar el comando:
 ```yaml
-  npm i md-links-fritza
+  npm i md-links-fritzavz
 ```
 
 ## 3. Guía de uso
@@ -27,7 +27,7 @@ Para comenzar la instalación de esta libreria necesitas primero instalar Node.j
 Una vez que ya se instaló la libería se debe porceder a ejecutar con el siguiente comando: 
 
 ```yaml
-  md-links-fritza ./path/to/file.md (argumento)
+  md-links-fritza (ruta o achivo.md) (argumento)
 ```
 ### Opciones de argumentos
 
